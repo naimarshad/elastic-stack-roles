@@ -39,24 +39,27 @@ With Ansible and the collection installed we can setup our inventory file (hosts
 
 ```
 [elasticsearch_master]
-elk-node-01 ansible_host=172.25.25.74 ansible_user=root
-elk-node-02 ansible_host=172.25.25.164 ansible_user=root
-elk-node-03 ansible_host=172.25.25.224 ansible_user=root
+elk-node-01 ansible_host=172.17.20.68 ansible_user=ubuntu 
+elk-node-02 ansible_host=172.17.20.235 ansible_user=ubuntu
+elk-node-03 ansible_host=172.17.20.67 ansible_user=ubuntu 
 
 [elasticsearch_data]
-elk-node-04 ansible_host=172.25.25.198 ansible_user=root
-elk-node-05 ansible_host=172.25.25.225 ansible_user=root
-elk-node-06 ansible_host=172.25.25.168 ansible_user=root
+elk-node-04 ansible_host=172.17.20.4 ansible_user=ubuntu
+elk-node-05 ansible_host=172.17.20.129 ansible_user=ubuntu 
+elk-node-06 ansible_host=172.17.20.53 ansible_user=ubuntu
+elk-node-07 ansible_host=172.17.20.96 ansible_user=ubuntu
+elk-node-08 ansible_host=172.17.20.78 ansible_user=ubuntu
+elk-node-09 ansible_host=172.17.20.131 ansible_user=ubuntu
 
 [elasticsearch_ca]
-elk-node-01 ansible_host=172.25.25.74 ansible_user=root
+elk-node-01 ansible_host=172.17.20.68 ansible_user=ubuntu
 
 [kibana]
-elk-node-02 ansible_host=172.25.25.164 ansible_user=root
+elk-node-02 ansible_host=172.17.20.235 ansible_user=ubuntu 
 
 [logstash]
-elk-node-06 ansible_host=172.25.25.168 ansible_user=root
-elk-node-07 ansible_host=172.25.25.252 ansible_user=root
+elk-node-09 ansible_host=172.17.20.131 ansible_user=ubuntu 
+elk-node-10 ansible_host=172.17.20.32 ansible_user=ubuntu 
 
 [elasticsearch:children]
 elasticsearch_master
@@ -100,12 +103,15 @@ elasticsearch_hosts:
   - elk-node-05
   - elk-node-06
   - elk-node-07
+  - elk-node-08
+  - elk-node-09
+  - elk-node-10    
 ```
 
 
 The final cluster will be made of:
 
-* 7 elasticsearch nodes (3 master nodes and 3 data nodes)
+* 10 elasticsearch nodes (3 master nodes and 6 data nodes)
 * 2 logstash instances
 * 1 kibana  instances
 

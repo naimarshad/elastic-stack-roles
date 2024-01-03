@@ -1,0 +1,39 @@
+---
+elasticsearch_version: 8.11.3
+kibana_version: 8.11.3
+logstash_version: 8.11.3
+beats_version: 8.11.3
+
+elasticsearch_resolv_mode: hosts
+elasticsearch_install_mode: local
+logstash_install_mode: local
+elasticsearch_local_tar_path: ~/elk_tar_path
+logstash_local_tar_path: ~/elk_tar_path
+elasticsearch_monitoring_enabled: yes
+elasticsearch_master_is_also_data_node: no
+
+kibana_install_mode: local
+kibana_local_tar_path: ~/elk_tar_path
+setup_kibana_dashboards: yes
+kibana_url: http://elk-node-02:5601
+
+heartbeat_number_of_shards: 3
+heartbeat_number_of_replicas: 3
+
+metricbeat_number_of_shards: 3
+metricbeat_number_of_replicas: 3
+
+filebeat_number_of_shards: 3
+filebeat_number_of_replicas: 3
+
+elasticsearch_hosts:
+  - elk-node-01 
+  - elk-node-02
+  - elk-node-03
+  - elk-node-04
+  - elk-node-05
+  - elk-node-06
+  - elk-node-07
+  - elk-node-08
+  - elk-node-09
+  - elk-node-10      
